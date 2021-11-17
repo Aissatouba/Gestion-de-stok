@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords"
+        content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
+    <!-- Css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="stylesheet" href="./dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
+    <title>Dashboard | Tailwind Admin</title>
+</head>
+
+<body>
+    <!--Container -->
+    <div class="mx-auto bg-grey-400">
+        <!--Screen-->
+        <div class="min-h-screen flex flex-col">
+            <!--Header Section Starts Here-->
+            <header class="bg-nav">
+                <div class="flex justify-between">
+                    <div class="p-1 mx-3 inline-flex items-center">
+                        <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
+                        <h1 class="text-white p-2">Logo</h1>
+                    </div>
+                    <div class="p-1 flex flex-row items-center">
+
+                        <a href="#" class="text-white p-3 no-underline hidden md:block lg:block">users</a>
+                    </div>
+            </header>
+            <!--/Header-->
+
+            <div class="flex flex-1">
+                <!--Sidebar-->
+                <aside id="sidebar"
+                    class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+
+                    <ul class="list-reset flex flex-col">
+                        <li class=" w-full h-full py-4 px-12 border-b border-light-border bg-white">
+                            <h1 class="text-black p-2"> Atelier ISEP</h1>
+                        </li>
+                        <li class="w-full h-full py-4 px-2 border-b border-light-border">
+                            <a href="index.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fab fa-wpforms float-left mx-2"></i>
+                                Article
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-4 px-2 border-b border-light-border">
+                            <a href="client.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fab fa-wpforms float-left mx-2"></i>
+                                Client
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-4 px-2 border-b border-light-border">
+                            <a href="fournisseur.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fas fa-grip-horizontal float-left mx-2"></i>
+                                Fournisseurs
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-4 px-2 border-b border-light-border">
+                            <a href="entrees.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fas fa-table float-left mx-2"></i>
+                                Entrees
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-4 px-2 border-b border-light-border">
+                            <a href="sorties.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fab fa-uikit float-left mx-2"></i>
+                                Sorties
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-4 px-2 border-b  border-light-border ">
+                            <a href="login.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fab fa-uikit float-left mx-2"></i>
+                                Deconnexion
+                                <span></span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </aside>
+                <!--/Sidebar-->
+                <!--Main-->
+                <main class="bg-white-300 flex-1 p-3 overflow-hidden">
+
+
+                    <div class="flex flex-col">
+
+                        <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+
+
+                            <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
+                                <div class="px-6 py-2 ">
+                                    <div class="font-bold text-xl">Liste des Articles
+                                        <button data-modal='centeredFormModal'
+                                            class=" modal-trigger bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 border border-blue-800 rounded float-right">
+                                            New Article
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="table-responsive">
+                                    <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
+                                        <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
+                                            <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
+                                                Full Table
+                                            </div>
+                                            <div class="p-3">
+                                                <table class="table-responsive w-full rounded">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="border w-1/4 px-4 py-2">Student Name</th>
+                                                            <th class="border w-1/6 px-4 py-2">City</th>
+                                                            <th class="border w-1/6 px-4 py-2">Course</th>
+                                                            <th class="border w-1/6 px-4 py-2">Fee</th>
+                                                            <th class="border w-1/7 px-4 py-2">Status</th>
+                                                            <th class="border w-1/5 px-4 py-2">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="border px-4 py-2">Micheal Clarke</td>
+                                                            <td class="border px-4 py-2">Sydney</td>
+                                                            <td class="border px-4 py-2">MS</td>
+                                                            <td class="border px-4 py-2">900 $</td>
+                                                            <td class="border px-4 py-2">
+                                                                <i class="fas fa-check text-green-500 mx-2"></i>
+                                                            </td>
+                                                            <td class="border px-4 py-2">
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-eye"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-edit"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="border px-4 py-2">Rickey Ponting</td>
+                                                            <td class="border px-4 py-2">Sydney</td>
+                                                            <td class="border px-4 py-2">MS</td>
+                                                            <td class="border px-4 py-2">300 $</td>
+                                                            <td class="border px-4 py-2">
+                                                                <i class="fas fa-times text-red-500 mx-2"></i>
+                                                            </td>
+                                                            <td class="border px-4 py-2">
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-eye"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-edit"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="border px-4 py-2">Micheal Clarke</td>
+                                                            <td class="border px-4 py-2">Sydney</td>
+                                                            <td class="border px-4 py-2">MS</td>
+                                                            <td class="border px-4 py-2">900 $</td>
+                                                            <td class="border px-4 py-2">
+                                                                <i class="fas fa-check text-green-500 mx-2"></i>
+                                                            </td>
+                                                            <td class="border px-4 py-2">
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-eye"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-edit"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="border px-4 py-2">Micheal Clarke</td>
+                                                            <td class="border px-4 py-2">Sydney</td>
+                                                            <td class="border px-4 py-2">MS</td>
+                                                            <td class="border px-4 py-2">900 $</td>
+                                                            <td class="border px-4 py-2">
+                                                                <i class="fas fa-check text-green-500 mx-2"></i>
+                                                            </td>
+                                                            <td class="border px-4 py-2">
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-eye"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-edit"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="border px-4 py-2">Micheal Clarke</td>
+                                                            <td class="border px-4 py-2">Sydney</td>
+                                                            <td class="border px-4 py-2">MS</td>
+                                                            <td class="border px-4 py-2">900 $</td>
+                                                            <td class="border px-4 py-2">
+                                                                <i class="fas fa-check text-green-500 mx-2"></i>
+                                                            </td>
+                                                            <td class="border px-4 py-2">
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-eye"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-edit"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="border px-4 py-2">Micheal Clarke</td>
+                                                            <td class="border px-4 py-2">Sydney</td>
+                                                            <td class="border px-4 py-2">MS</td>
+                                                            <td class="border px-4 py-2">900 $</td>
+                                                            <td class="border px-4 py-2">
+                                                                <i class="fas fa-check text-green-500 mx-2"></i>
+                                                            </td>
+                                                            <td class="border px-4 py-2">
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-eye"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
+                                                                    <i class="fas fa-edit"></i></a>
+                                                                <a
+                                                                    class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /card -->
+
+                        </div>
+
+                    </div>
+                </main>
+                <!--/Main-->
+            </div>
+
+        </div>
+
+    </div>
+    <div id='centeredFormModal' class="modal-wrapper">
+        <div class="overlay close-modal"></div>
+        <div class="modal modal-centered">
+            <div class="modal-content shadow-lg p-5">
+                <div class="border-b p-2 pb-3 pt-0 mb-4">
+                    <div class="flex justify-between items-center">
+                        Nouvelle Sortie
+                        <span class='close-modal cursor-pointer px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200'>
+                            <i class="fas fa-times text-gray-700"></i>
+                        </span>
+                    </div>
+                </div>
+                <!-- Modal content -->
+                <form id='form_id' class="w-full">
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                                for="grid-last-name">
+                                Last Name
+                            </label>
+                            <input
+                                class="appearance-none block w-full bg-gray-200 text-grey-darker border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                id="grid-last-name" type="text">
+                        </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                                for="grid-last-name">
+                                Last Name
+                            </label>
+                            <input
+                                class="appearance-none block w-full bg-gray-200 text-grey-darker border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                id="grid-last-name" type="text">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                                for="grid-last-name">
+                                Last Name
+                            </label>
+                            <input
+                                class="appearance-none block w-full bg-gray-200 text-grey-darker border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                id="grid-last-name" type="text">
+                        </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-light mb-1"
+                                for="grid-last-name">
+                                Last Name
+                            </label>
+                            <input
+                                class="appearance-none block w-full bg-gray-200 text-grey-darker border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                id="grid-last-name" type="text">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-2">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                for="grid-city">
+                                City
+                            </label>
+                            <input
+                                class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                id="grid-city" type="text">
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                for="grid-state">
+                                State
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                    id="grid-state">
+                                    <option>New Mexico</option>
+                                    <option>Missouri</option>
+                                    <option>Texas</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-grey-darker">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5">
+                        <button class='bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'> Ajouter
+                        </button>
+                        <span
+                            class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'>
+                            Annuler
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
